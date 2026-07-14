@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+     content="width=device-width, 
+     initial-scale=1.0">
+    <title>to do list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    
+<div class="bar">
+    
+<header class="dashboard">
+<h1>tasks to do</h1> <br>
+
+
+
+<button id="theme_btn" onclick="darkMode()">🌙</button>
+
+
+</header>
+<div class="entry">
+<label class="task_entry" >Task entry*</label><br>
+<input id="tasks" type="text" name="username" placeholder="Enter task">
+<button id="add_button" onclick="add()">add</button>
+
+
+<h2 id="tasktitle">Task Lists</h2>
+
+<ol id="tasklist"> 
+<p id="counter">finished:<span id="checked">0</span>
+remaining:<span id="unchecked">0</span>
+total:<span id="total">0</span>
+</p>
+
+<div class="tabs">
+
+    <button onclick="filterTasks('all')" id="allbutton2">
+        All
+    </button>
+
+    <button onclick="filterTasks('completed')">
+        Completed
+    </button>
+
+    <button onclick="filterTasks('pending')">
+        Pending
+    </button>
+    
+</div>
+<div id="temp">
+<img id="no" src="notask.jpg" ><br>
+</div>
+</ol>
+
+</div>
+
+<div id="edit_form">
+<form >
+<label id="editlable">Edit Your Task:</label>
+<input type="text" name="edit_task" id="edit_task"><br>
+<div class="buttons">
+<button type="button" class="edit_save" onclick="saveform()" > save</button>
+<button type="button" class="edit_close" onclick="closeform()"> close</button>
+</div>
+</form>
+
+</div>
+<button id="clear" onclick="clearall()">clear all</button>
+</div>
+
+
+
+
+
+
+<script src="script.js">
+</script>   
+</body>
+</html>
