@@ -492,6 +492,10 @@ body.dark #edit_form{
         font-size:11px;
 
     }
+     #counter{
+        display: flex;
+        margin: auto;
+    }
 
 
     #no{
