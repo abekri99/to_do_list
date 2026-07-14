@@ -209,9 +209,13 @@ li{
 
 
 #counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     margin-left:auto;
     margin-right:10px;
+    margin-top:-20px;
 
     width:max-content;
 
@@ -230,22 +234,9 @@ li{
 #total{
 
     padding:4px;
-
+    font-weight:bolder;
     border-radius:12px;
 
-}
-
-
-#checked{
-    background:green;
-}
-
-#unchecked{
-    background:red;
-}
-
-#total{
-    background:#125ca2;
 }
 
 
@@ -496,6 +487,7 @@ body.dark #edit_form{
      #counter{
         display: flex;
         margin: auto;
+         margin-top:-10px;
     }
 
 
