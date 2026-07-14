@@ -448,6 +448,7 @@ body.dark #edit_form{
     .bar{
 
         width:95%;
+        min-height:82vh;
 
     }
 
