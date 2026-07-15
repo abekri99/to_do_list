@@ -55,7 +55,39 @@ body{
     padding:15px;
     text-align:left;
 }
+#search-bar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    width:100%;
+    margin:15px 0;
+}
 
+#search{
+    flex:left;
+    height:35px;
+    margin-left:auto;
+
+    border:3px outset rgba(25,40,133,0.742);
+    border-radius:20px;
+
+    box-shadow:0 2px 4px;
+
+    padding:0 5px;
+}
+
+#search-icon{
+    width:30px;
+    height:30px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+}
 
 .task_entry{
     color:#243770;
@@ -78,6 +110,22 @@ input{
 
     box-shadow:0 1px 5px black;
 }
+
+#duedate{
+    display: none;
+     border:4px outset rgb(31,118,206);
+    border-radius:50px;
+
+    
+    
+}
+
+#duedatebutton{
+     border:4px outset rgb(31,118,206);
+    border-radius:50px;
+
+}
+
 
 #allbutton2{
     width: 70px;
@@ -104,12 +152,13 @@ input{
 
     height:35px;
     width:fit-content;
+    bottom: 20px;
 
     border-radius:25px;
 
     border:2px outset #94a2cb;
 
-    background:#243770;
+    background:#23317d;
     color:white;
 
     cursor:pointer;
@@ -121,6 +170,9 @@ input{
 
 button:hover{
     transform:scale(1.05);
+
+   
+   
 }
 
 
@@ -164,7 +216,7 @@ li{
 
 
 .task-text{
-    flex:1;
+    margin-right: auto;
     font-style:italic;
     font-weight:bold;
 }
@@ -209,14 +261,13 @@ li{
 
 
 #counter{
+
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin-left:auto;
     margin-right:10px;
-    margin-top:-20px;
-
+    margin-top: 20px;
     width:max-content;
 
     padding:5px;
@@ -232,12 +283,17 @@ li{
 #checked,
 #unchecked,
 #total{
+    color: rgb(22, 16, 107);
 
-    padding:4px;
-    font-weight:bolder;
+    padding: 1px;
+    font-weight: bolder;
     border-radius:12px;
 
 }
+
+
+
+
 
 
 #temp{
@@ -439,7 +495,6 @@ body.dark #edit_form{
     .bar{
 
         width:95%;
-        min-height:82vh;
 
     }
 
@@ -472,6 +527,12 @@ body.dark #edit_form{
         font-size:13px;
 
     }
+    #counter{
+        display: flex;
+        margin: auto;
+      
+        margin-top: -10px;
+    }
 
 
     .edit-btn,
@@ -483,11 +544,6 @@ body.dark #edit_form{
 
         font-size:11px;
 
-    }
-     #counter{
-        display: flex;
-        margin: auto;
-         margin-top:-10px;
     }
 
 
