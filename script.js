@@ -27,6 +27,8 @@ function updateNumbers(){
 function add(load=false, savedChecked=false){
 
     let task = document.getElementById("tasks").value.trim();
+    let date=document.getElementById("duedate").value;
+    
 
     if(task !== ""){
 
@@ -60,10 +62,15 @@ function add(load=false, savedChecked=false){
         edit.textContent="edit";
         edit.className="edit-btn";
 
+        let duedate=document.createElement("span");
+        duedate.textContent=date
+        duedate.className="duedate_in_li"
+
 
 
         li.appendChild(num);
         li.appendChild(span);
+        li.appendChild(duedate);
         li.appendChild(checkbox);
         li.appendChild(delbutton);
         li.appendChild(edit);
@@ -97,7 +104,8 @@ function add(load=false, savedChecked=false){
 
             tasks.push({
                 text:task,
-                checked:false
+                checked:false,
+                duedate:date
             });
 
             saveTasks();
@@ -109,6 +117,7 @@ function add(load=false, savedChecked=false){
 
 
             let taskObject = tasks.find(t=>t.text===span.textContent);
+            
 
 
 
@@ -206,6 +215,7 @@ function add(load=false, savedChecked=false){
         document.getElementById("tasks").value="";
 
     }
+    closeduedate()
 
 }
 
@@ -269,7 +279,7 @@ window.onload=function(){
 
 
         document.getElementById("tasks").value=item.text;
-
+    document.getElementById("duedate").value=item.duedate;
 
         add(true,item.checked);
 
@@ -355,7 +365,37 @@ function filterTasks(type){
 
 }
 function clearall(){
-    console.log()
+    if(confirm("are you sure you want to clear all?")){
+     console.log()
     localStorage.clear()
-    location.reload()
+    location.reload()}
+}
+function search_task(){
+
+    let search = document.getElementById("search").value.toLowerCase();
+
+    let tasks = document.querySelectorAll(".task-item");
+
+    tasks.forEach(function(task){
+
+        let text = task.querySelector(".task-text").textContent.toLowerCase();
+
+        if(text.includes(search)){
+            task.style.display="flex";
+        }
+        else{
+            task.style.display="none";
+        }
+
+    });
+
+}
+function openduedate(){
+    let duedate=document.getElementById("duedate");
+    duedate.style.display="flex"
+    
+}
+function closeduedate(){
+    let duedate=document.getElementById("duedate");
+    duedate.style.display="none"
 }
