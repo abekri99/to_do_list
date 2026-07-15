@@ -12,48 +12,60 @@
     
 <div class="bar">
     
-<header class="dashboard">
-<h1>tasks to do</h1> <br>
+    <header class="dashboard">
+        <h1>tasks to do</h1> <br>
 
 
 
-<button id="theme_btn" onclick="darkMode()">🌙</button>
+        <button id="theme_btn" onclick="darkMode()">🌙</button>
 
 
-</header>
-<div class="entry">
-<label class="task_entry" >Task entry*</label><br>
-<input id="tasks" type="text" name="username" placeholder="Enter task">
-<button id="add_button" onclick="add()">add</button>
+    </header>
+    <div class="entry">        
+        <label class="task_entry" >Task entry*</label><br>
+        <input id="tasks" type="text" name="username" placeholder="Enter task">
+        <input type="date" id="duedate" >
+        <button id="duedatebutton" onclick="openduedate()">&#x1F4C5;</button>
+        <button id="add_button" onclick="add()">add</button>
+    </div>
 
 
-<h2 id="tasktitle">Task Lists</h2>
+    <h2 id="tasktitle">Task Lists</h2>
+    <search id="search-bar" >
+        <input type="text" name="search" id="search" placeholder="search a task ...">
+        <button type="submit" id="search-icon" onclick=search_task()>&#128269;</button>
+    </search>
 
-<ol id="tasklist"> 
-<p id="counter">finished:<span id="checked">0</span>
-remaining:<span id="unchecked">0</span>
-total:<span id="total">0</span>
-</p>
-
-<div class="tabs">
-
-    <button onclick="filterTasks('all')" id="allbutton2">
-        All
-    </button>
-
-    <button onclick="filterTasks('completed')">
-        Completed
-    </button>
-
-    <button onclick="filterTasks('pending')">
-        Pending
-    </button>
     
-</div>
-<div id="temp">
-<img id="no" src="notask.jpg" ><br>
-</div>
-</ol>
+    <p id="counter">finished:  <span id="checked">0</span>
+    remaining:<span id="unchecked">0</span>
+    total:<span id="total">0</span>
+    </p>
+
+    <div class="tabs">
+
+        <button onclick="filterTasks('all')" id="allbutton2">
+            All
+        </button>
+
+        <button onclick="filterTasks('completed')">
+            Completed
+        </button>
+
+        <button onclick="filterTasks('pending')">
+            Pending
+        </button>
+        
+    </div>
+    <div id="temp">
+       <img id="no" src="notask.jpg" ><br>
+    </div>
+    <ol id="tasklist"> 
+    </ol>
+    <div>
+    <button id="clear" onclick="clearall()">clear all</button>
+    </div>
+
 
 </div>
 
@@ -68,8 +80,6 @@ total:<span id="total">0</span>
 </form>
 
 </div>
-<button id="clear" onclick="clearall()">clear all</button>
-</div>
 
 
 
@@ -78,5 +88,7 @@ total:<span id="total">0</span>
 
 <script src="script.js">
 </script>   
+</body>
+</html>
 </body>
 </html>
